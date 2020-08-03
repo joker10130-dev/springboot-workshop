@@ -58,4 +58,8 @@ public class CircularBuffer {
     public boolean checkOnSlot(String a, int slot) {
         return this.buffer[slot-1] == a;
     }
+
+    public void remove(int i) {
+        this.buffer[i-1] = null;
+    }
 }

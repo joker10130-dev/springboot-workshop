@@ -64,4 +64,12 @@ public class CircularBufferTest {
         boolean result = cb.checkOnSlot("A",slot);
         assertTrue(result);
     }
+
+    @Test
+    public void remove_A_on_first_buffer(){
+        CircularBuffer cb = new CircularBuffer();
+        cb.writeDataSlot("A",1);
+        cb.remove(1);
+        assertEquals(null, cb.readData());
+    }
 }

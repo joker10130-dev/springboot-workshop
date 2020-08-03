@@ -6,3 +6,4 @@ List of Test Cases
 5. overwrite first A with B after write buffer to limit size
 6. resize the buffer size and check
 7. write A on slot 3 and check if it's there
+8. remove A from first slot
