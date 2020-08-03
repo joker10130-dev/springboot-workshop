@@ -51,4 +51,11 @@ public class CircularBuffer {
         return this.buffer.length == size;
     }
 
+    public void writeDataSlot(String a, int i) {
+        this.buffer[i-1] = a;
+    }
+
+    public boolean checkOnSlot(String a, int slot) {
+        return this.buffer[slot-1] == a;
+    }
 }

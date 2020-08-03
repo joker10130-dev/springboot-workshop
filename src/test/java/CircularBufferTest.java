@@ -55,4 +55,13 @@ public class CircularBufferTest {
         boolean result = cb.isSameSize(size);
         assertTrue(result);
     }
+
+    @Test
+    public void write_A_on_buffer_at_slot_3(){
+        CircularBuffer cb = new CircularBuffer();
+        int slot = 3;
+        cb.writeDataSlot("A",slot);
+        boolean result = cb.checkOnSlot("A",slot);
+        assertTrue(result);
+    }
 }

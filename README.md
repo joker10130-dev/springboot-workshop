@@ -5,3 +5,4 @@ List of Test Cases
 4. write A and B to buffer and read it
 5. overwrite first A with B after write buffer to limit size
 6. resize the buffer size and check
+7. write A on slot 3 and check if it's there
