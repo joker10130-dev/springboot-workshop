@@ -47,8 +47,8 @@ public class CircularBuffer {
 //        this.buffer = new String[15];
 //    }
 //
-//    public boolean isSameSize(int size){
-//        return this.buffer.length == size;
-//    }
+    public boolean isSameSize(int size){
+        return this.buffer.length == size;
+    }
 
 }

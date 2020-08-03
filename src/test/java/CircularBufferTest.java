@@ -20,13 +20,13 @@ public class CircularBufferTest {
         assertTrue("Buffer Not full", result);
     }
 
-//    @Test
-//    public void create_new_buffer_with_default_size_should_10(){
-//        CircularBuffer cb = new CircularBuffer();
-//        int size = 10;
-//        boolean result = cb.isSameSize(size);
-//        assertTrue("Buffer size is not ten", result);
-//    }
+    @Test
+    public void create_new_buffer_with_default_size_should_10(){
+        CircularBuffer cb = new CircularBuffer();
+        int size = 10;
+        boolean result = cb.isSameSize(size);
+        assertTrue("Buffer size is not ten", result);
+    }
 //    @Test
 //    public void write_A_B_to_buffer_should_read_A_B(){
 //        CircularBuffer cb = new CircularBuffer();
