@@ -12,8 +12,8 @@ public class HelloWorldTest {
     @Test
     public void sayHi_with_somkiat_should_return_Hello_Somkiat() {
         HelloWorld helloWorld = new HelloWorld();
-        String result = helloWorld.sayHi("somkiat");
-        assertEquals("Hello Somkiat", result);
+        String result = helloWorld.sayHi("somkiaT");
+        assertEquals("Hello SomkiaT", result);
     }
     @Test
     public void sayHi_with_pui_should_return_Hello_Somkiat() {
