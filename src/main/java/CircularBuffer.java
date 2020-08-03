@@ -43,10 +43,10 @@ public class CircularBuffer {
         return this.buffer[readPointer++];
     }
 
-//    public void setSize(int input) {
-//        this.buffer = new String[15];
-//    }
-//
+    public void setSize(int input) {
+        this.buffer = new String[15];
+    }
+
     public boolean isSameSize(int size){
         return this.buffer.length == size;
     }

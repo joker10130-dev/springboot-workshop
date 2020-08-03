@@ -47,12 +47,12 @@ public class CircularBufferTest {
         assertEquals("B", cb.readData());
     }
 
-//    @Test
-//    public void set_new_buffer_size_from_ten_to_15(){
-//        CircularBuffer cb = new CircularBuffer();
-//        int size = 15;
-//        cb.setSize(size);
-//        boolean result = cb.isSameSize(size);
-//        assertTrue(result);
-//    }
+    @Test
+    public void set_new_buffer_size_from_ten_to_15(){
+        CircularBuffer cb = new CircularBuffer();
+        int size = 15;
+        cb.setSize(size);
+        boolean result = cb.isSameSize(size);
+        assertTrue(result);
+    }
 }
