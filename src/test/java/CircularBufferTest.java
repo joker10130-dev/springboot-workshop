@@ -37,16 +37,16 @@ public class CircularBufferTest {
         assertEquals("B", cb.readData());
     }
 
-//    @Test
-//    public void overwrite_A_with_B_to_first_buffer_after_full(){
-//        CircularBuffer cb = new CircularBuffer();
-//        for(int i =0;i<10;i++){
-//            cb.writeData("A"+i);
-//        }
-//        cb.writeData("B");
-//        assertEquals("B", cb.readData());
-//    }
-//
+    @Test
+    public void overwrite_A_with_B_to_first_buffer_after_full(){
+        CircularBuffer cb = new CircularBuffer();
+        for(int i =0;i<10;i++){
+            cb.writeData("A"+i);
+        }
+        cb.writeData("B");
+        assertEquals("B", cb.readData());
+    }
+
 //    @Test
 //    public void set_new_buffer_size_from_ten_to_15(){
 //        CircularBuffer cb = new CircularBuffer();
