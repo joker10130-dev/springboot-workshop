@@ -27,15 +27,16 @@ public class CircularBufferTest {
         boolean result = cb.isSameSize(size);
         assertTrue("Buffer size is not ten", result);
     }
-//    @Test
-//    public void write_A_B_to_buffer_should_read_A_B(){
-//        CircularBuffer cb = new CircularBuffer();
-//        cb.writeData("A");
-//        cb.writeData("B");
-//        assertEquals("A", cb.readData());
-//        assertEquals("B", cb.readData());
-//    }
-//
+
+    @Test
+    public void write_A_B_to_buffer_should_read_A_B(){
+        CircularBuffer cb = new CircularBuffer();
+        cb.writeData("A");
+        cb.writeData("B");
+        assertEquals("A", cb.readData());
+        assertEquals("B", cb.readData());
+    }
+
 //    @Test
 //    public void overwrite_A_with_B_to_first_buffer_after_full(){
 //        CircularBuffer cb = new CircularBuffer();

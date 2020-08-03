@@ -38,11 +38,11 @@ public class CircularBuffer {
         }
         return readPointer==10;
     }
-//
-//    public String readData() {
-//        return this.buffer[readPointer++];
-//    }
-//
+
+    public String readData() {
+        return this.buffer[readPointer++];
+    }
+
 //    public void setSize(int input) {
 //        this.buffer = new String[15];
 //    }
