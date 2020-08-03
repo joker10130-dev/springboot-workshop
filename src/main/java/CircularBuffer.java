@@ -20,24 +20,24 @@ public class CircularBuffer {
         return readPointer==10;
     }
 
-//    public void writeData(String input) {
-//        this.buffer[writePointer++] = input;
-//        if(writePointer ==10){
-//            writePointer = 0;
-//        }
-//    }
-//
-//    public boolean isFull() {
-//        for(int i = 0; i<10; i++){
-//            if(this.buffer[readPointer] != null){
-//                readPointer++;
-//            }
-//            else{
-//                return false;
-//            }
-//        }
-//        return readPointer==10;
-//    }
+    public void writeData(String input) {
+        this.buffer[writePointer++] = input;
+        if(writePointer ==10){
+            writePointer = 0;
+        }
+    }
+
+    public boolean isFull() {
+        for(int i = 0; i<10; i++){
+            if(this.buffer[readPointer] != null){
+                readPointer++;
+            }
+            else{
+                return false;
+            }
+        }
+        return readPointer==10;
+    }
 //
 //    public String readData() {
 //        return this.buffer[readPointer++];
