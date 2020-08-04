@@ -3,7 +3,6 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -12,9 +11,9 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class TennisTest {
 
-    private int player1Score;
-    private int player2Score;
-    private String expectedScore;
+    private final int player1Score;
+    private final int player2Score;
+    private final String expectedScore;
 
     public TennisTest(int player1Score, int player2Score, String expectedScore) {
         this.player1Score = player1Score;
