@@ -11,3 +11,4 @@ List of Test Cases
 Refractor TennisGame
 1. Too much if, using switch case instead
 2. Too many if condition where it is the same condition but on another if else, set another method to get result specially
+3. playerName is a hard code, change to dynamic
