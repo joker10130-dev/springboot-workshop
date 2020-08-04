@@ -10,79 +10,44 @@ public class TennisGame2
         this.player2Name = player2Name;
     }
 
-    public String getResult(int point){
-        switch(point){
-            case 0:
-                return "Love";
-            case 1:
-                return "Fifteen";
-            case 2:
-                return "Thirty";
-        }
-        return "Forty";
-    }
-
     public String getScore(){
-        String player1Result = "";
-        String player2Result = "";
-        String score = "";
+        String[] textScores = {"Love", "Fifteen", "Thirty", "Forty"};
 
-        if (player1Point == player2Point && player1Point < 4)
+//        Draw
+        boolean drawNotDeuce = player1Point == player2Point && player1Point < 3;
+        if (drawNotDeuce)
         {
-            score = getResult(player1Point);
-            score += "-All";
+            return textScores[player1Point]+"-All";
         }
 
-        if (player1Point == player2Point && player1Point >=3)
-            score = "Deuce";
-
-        if (player1Point > 0 && player2Point ==0)
-        {
-            player1Result = getResult(player1Point);
-            player2Result = "Love";
-            score = player1Result + "-" + player2Result;
+//        Deuce
+        boolean isDeuce = player1Point == player2Point && player1Point >= 3;
+        if (isDeuce) {
+            return "Deuce";
         }
 
-        if (player2Point > 0 && player1Point ==0)
-        {
-            player2Result = getResult(player2Point);
-            player1Result = "Love";
-            score = player1Result + "-" + player2Result;
-        }
-
-        if (player1Point > player2Point && player1Point < 4)
-        {
-            player1Result = getResult(player1Point);
-            player2Result = getResult(player2Point);
-            score = player1Result + "-" + player2Result;
-        }
-
-        if (player2Point > player1Point && player2Point < 4)
-        {
-            player1Result = getResult(player1Point);
-            player2Result = getResult(player2Point);
-            score = player1Result + "-" + player2Result;
-        }
-
-        if (player1Point > player2Point && player2Point >= 3)
-        {
-            score = "Advantage "+player1Name;
-        }
-
-        if (player2Point > player1Point && player1Point >= 3)
-        {
-            score = "Advantage "+player2Name;
-        }
-
+        //        Winner
         if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2)
         {
-            score = "Win for "+player1Name;
+            return "Win for "+player1Name;
         }
         if (player2Point >=4 && player1Point >=0 && (player2Point - player1Point)>=2)
         {
-            score = "Win for "+player2Name;
+            return "Win for "+player2Name;
         }
-        return score;
+
+//        Advantage
+        if (player1Point > player2Point && player2Point >= 3)
+        {
+            return "Advantage "+player1Name;
+        }
+        if (player2Point > player1Point && player1Point >= 3)
+        {
+            return "Advantage "+player2Name;
+        }
+
+
+        return textScores[player1Point]+"-"+textScores[player2Point];
     }
 
     public void player1Score(){
