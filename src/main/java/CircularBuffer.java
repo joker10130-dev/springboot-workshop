@@ -1,41 +1,48 @@
 public class CircularBuffer {
-    private int bufferSize = 10;
+    private final int bufferSize;
     private String[] buffer;
     private int readPointer;
     private int writePointer;
 
     public CircularBuffer() {
-        this.buffer = new String[10];
+        this(10);
+    }
+
+    public CircularBuffer(int size) {
+        this.bufferSize = size;
+        this.buffer = new String[bufferSize];
     }
 
     public boolean isEmpty() {
-        for(int i = 0; i<10; i++){
-            if(this.buffer[readPointer] == null){
-                readPointer++;
-            } else {
-                return false;
-            }
-        }
-        return readPointer==10;
+//        for(int i = 0; i<bufferSize; i++){
+//            if(this.buffer[readPointer] == null){
+//                readPointer++;
+//            } else {
+//                return false;
+//            }
+//        }
+//        return readPointer==bufferSize;
+        return readPointer == writePointer;
     }
 
     public void writeData(String input) {
         this.buffer[writePointer++] = input;
-        if(writePointer ==10){
+        if(writePointer ==bufferSize){
             writePointer = 0;
         }
     }
 
     public boolean isFull() {
-        for(int i = 0; i<10; i++){
-            if(this.buffer[readPointer] != null){
-                readPointer++;
-            }
-            else{
-                return false;
-            }
-        }
-        return readPointer==10;
+//        for(int i = 0; i<bufferSize; i++){
+//            if(this.buffer[readPointer] != null){
+//                readPointer++;
+//            }
+//            else{
+//                return false;
+//            }
+//        }
+//        return readPointer==bufferSize;
+        return writePointer>=bufferSize;
     }
 
     public String readData() {
@@ -55,7 +62,7 @@ public class CircularBuffer {
     }
 
     public boolean checkOnSlot(String a, int slot) {
-        return this.buffer[slot-1] == a;
+        return this.buffer[slot - 1].equals(a);
     }
 
     public void remove(int i) {
