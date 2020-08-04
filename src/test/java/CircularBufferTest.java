@@ -53,7 +53,7 @@ public class CircularBufferTest {
         int size = 15;
         cb.setSize(size);
         boolean result = cb.isSameSize(size);
-        assertTrue(result);
+        assertTrue("Buffer is not 15 in size",result);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class CircularBufferTest {
         int slot = 3;
         cb.writeDataSlot("A",slot);
         boolean result = cb.checkOnSlot("A",slot);
-        assertTrue(result);
+        assertTrue("A isn't in slot 3",result);
     }
 
     @Test
