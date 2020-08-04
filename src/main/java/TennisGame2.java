@@ -42,12 +42,12 @@ public class TennisGame2
         }
 
 //        Advantage
-        boolean player1Advantage = player1Point > player2Point && player2Point >= 3;
+        boolean player1Advantage = player1Point > player2Point && player2Point >= 3 && (player1Point-player2Point) ==1;
         if (player1Advantage)
         {
             return "Advantage "+player1Name;
         }
-        boolean player2Advantage = player2Point > player1Point && player1Point >= 3;
+        boolean player2Advantage = player2Point > player1Point && player1Point >= 3 && (player2Point-player1Point) ==1;
         if (player2Advantage)
         {
             return "Advantage "+player2Name;
