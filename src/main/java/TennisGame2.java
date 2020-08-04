@@ -10,70 +10,57 @@ public class TennisGame2
         this.player2Name = player2Name;
     }
 
+    public String getResult(int point){
+        switch(point){
+            case 0:
+                return "Love";
+            case 1:
+                return "Fifteen";
+            case 2:
+                return "Thirty";
+        }
+        return "Forty";
+    }
+
     public String getScore(){
         String player1Result = "";
         String player2Result = "";
         String score = "";
+
         if (player1Point == player2Point && player1Point < 4)
         {
-            if (player1Point ==0)
-                score = "Love";
-            if (player1Point ==1)
-                score = "Fifteen";
-            if (player1Point ==2)
-                score = "Thirty";
+            score = getResult(player1Point);
             score += "-All";
         }
+
         if (player1Point == player2Point && player1Point >=3)
             score = "Deuce";
 
         if (player1Point > 0 && player2Point ==0)
         {
-            if (player1Point ==1)
-                player1Result = "Fifteen";
-            if (player1Point ==2)
-                player1Result = "Thirty";
-            if (player1Point ==3)
-                player1Result = "Forty";
-
+            player1Result = getResult(player1Point);
             player2Result = "Love";
             score = player1Result + "-" + player2Result;
         }
+
         if (player2Point > 0 && player1Point ==0)
         {
-            if (player2Point ==1)
-                player2Result = "Fifteen";
-            if (player2Point ==2)
-                player2Result = "Thirty";
-            if (player2Point ==3)
-                player2Result = "Forty";
-
+            player2Result = getResult(player2Point);
             player1Result = "Love";
             score = player1Result + "-" + player2Result;
         }
 
         if (player1Point > player2Point && player1Point < 4)
         {
-            if (player1Point ==2)
-                player1Result="Thirty";
-            if (player1Point ==3)
-                player1Result="Forty";
-            if (player2Point ==1)
-                player2Result="Fifteen";
-            if (player2Point ==2)
-                player2Result="Thirty";
+            player1Result = getResult(player1Point);
+            player2Result = getResult(player2Point);
             score = player1Result + "-" + player2Result;
         }
+
         if (player2Point > player1Point && player2Point < 4)
         {
-            if (player2Point ==2)
-                player2Result="Thirty";
-            if (player2Point ==3)
-                player2Result="Forty";
-            if (player1Point ==1)
-                player1Result="Fifteen";
-            if (player1Point ==2)
-                player1Result="Thirty";
+            player1Result = getResult(player1Point);
+            player2Result = getResult(player2Point);
             score = player1Result + "-" + player2Result;
         }
 
